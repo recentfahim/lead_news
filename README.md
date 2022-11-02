@@ -26,6 +26,10 @@ Install all dependency from  root  folder
 
     pip install -r requirements.txt
 
+Load static files using below command
+
+    python manage.py collectstatic
+
 #### Database Setup
 
 You can use any database you want, but in this project MySQL has been used.
