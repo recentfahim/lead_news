@@ -1,30 +1,33 @@
 {% extends 'layout.html' %}
+{% load static %}
 {% block title %}Home{% endblock %}
 {% block content %}
     <section>
         <div class="container mb-3">
-            <h1 class="text-center">Latest News</h1>
-            <div>
-                <ul class="list-group my-4">
+            <h1 class="mt-5">Latest News</h1>
+            <div class="news-wrapper">
+                <div class="row">
                     {% for article in news_list %}
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-3">
-                                    <img src="{{ article.image_url }}" alt="" width="100" height="100">
+                        <div class="col-4 mt-4">
+                            <div class="row news h-100">
+                                <div class="col-4 d-flex align-items-center">
+                                    <img src="{{ article.image_url }}" alt="" width="120">
                                 </div>
-                                <div class="col-6">
-                                    <a href="{{ article.url }}">{{ article.title }}</a>
-                                </div>
-                                <div class="col-3">
-                                    Published: {{ article.published_at|date:'d M, Y' }}<br>
-                                    Author: {{ article.author_name }}<br>
-                                    Source: {{ article.source_name }}
+                                <div class="col-8 position-relative">
+                                    <a href="{{ article.url }}">
+                                        <p class="">
+                                            {{ article.title }}
+                                        </p>
+                                    </a>
+                                    <p class="position-absolute bottom-n15px">
+                                        {{ article.published_at|date:'d M, Y' }} | {{ article.source_name }}
+                                    </p>
                                 </div>
                             </div>
-                        </li>
+                        </div>
                     {% endfor %}
-                </ul>
-                <nav aria-label="Page navigation example">
+                </div>
+                <nav class="mt-5">
                     {% if is_paginated %}
                         <ul class="pagination justify-content-center">
                             {% if page_obj.has_previous %}

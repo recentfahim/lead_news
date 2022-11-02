@@ -1,0 +1,28 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.news-wrapper .news {
+    background: #ffffff;
+    padding: 10px 8px;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+    min-height: 125px;
+}
+
+.news-wrapper .news a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.news-wrapper .news p {
+    display: -webkit-box;
+    /* max-width: 200px; */
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.bottom-n15px {
+    bottom: -15px;
+}
