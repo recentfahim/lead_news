@@ -9,7 +9,7 @@ class NewsListView(ListView):
     queryset = News.objects.all()
     paginate_by = 20
     context_object_name = 'news_list'
-    template_name = 'news_list.html'
+    template_name = 'home.html'
 
 
 class NewsAPIView(generics.ListAPIView):
